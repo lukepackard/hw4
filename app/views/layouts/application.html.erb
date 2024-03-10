@@ -15,6 +15,7 @@
     </div>
     <div>
       <a href="/">Home</a>
+      <% @user = User.find_by({"id" => cookies["username"]}) %>
       <a href="/logout">Logout</a>
       <a href="/login">Login</a>
       <a href="/users/new">Signup</a>

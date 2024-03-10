@@ -28,9 +28,10 @@ class EntriesController < ApplicationController
     @entry.save
     redirect_to "/places/#{@entry["user_id"]}"
   else
-    flash["notice"] = "Login first."
+    flash["notice"] = "Login first." 
+    redirect_to "/login"
   end
-  redirect_to "/entries"
+
 end
 before_action :allow_cors
   def allow_cors

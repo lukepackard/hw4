@@ -30,7 +30,7 @@
   <div class="container-fluid">
     <a class="navbar-brand"> <a href="/">Home</a> 
     <span class="navbar-text">
-      <% @user = User.find_by({"id" => cookies["username"]}) %>
+      <% @user = User.find_by({"id" => session["user_id"]}) %>
       <% if @user == nil %>
       <a href="/users/new">Signup</a>
       |

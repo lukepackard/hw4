@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
 
     # alternative responses to requests other than HTML
     respond_to do |format|
-      format.html # implicitly renders entries/index.html.erb
+      format.html
       format.json do
         render :json => @entries
       end

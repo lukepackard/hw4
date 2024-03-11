@@ -14,6 +14,7 @@ class EntriesController < ApplicationController
 
   def new
     @user = User.find_by({ "id" => session["user_id"] })
+    @place = Place.find_by({ "id" => params["place_id"] })
   end
 
   def create
@@ -25,6 +26,7 @@ class EntriesController < ApplicationController
     @entry["occurred_on"] = params["occurred_on"]
     @entry.uploaded_image.attach(params["uploaded_image"])
     @entry["user_id"] = session["user_id"]
+    @entry["place_id"] = params["place_id"]
     @entry.save
     redirect_to "/places/#{@entry["user_id"]}"
   else

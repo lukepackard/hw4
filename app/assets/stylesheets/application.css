@@ -1,1 +1,7 @@
 /* Application styles */
+.ms-1 {
+  margin-left: ($spacer * .25) !important;
+}
+<div class="grid gap-0 row-gap-3">
+</div>
+

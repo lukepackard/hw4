@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Myspace Returns </title>
+    <title> Myspace for Tacos </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -28,7 +28,7 @@
 <body>
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand"> <a href="/">Home</a> 
+    <a class="navbar-brand"> <a href="/"><div class=.ms-1>Home</div></a> 
     <span class="navbar-text">
       <% @user = User.find_by({"id" => session["user_id"]}) %>
       <% if @user == nil %>
@@ -44,11 +44,12 @@
     </div>
 </nav>
 
- <div class="gutter-left container">
+  <div class="container mt-3">
  <div>
       <%= flash["notice"] %>
   </div>
 
     <%= yield %>
   </div>
+  </body>
 </html>

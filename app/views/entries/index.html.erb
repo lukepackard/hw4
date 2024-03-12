@@ -1,7 +1,9 @@
+
+<body>
 <div class="row">
   <% for entry in @entries %>
-    <div class="col-md-3">
-      <h4>
+    <div class="col-sm-6 col-md-3">
+     <h4>
         <%# find user who created post %>
         <% user = User.find_by(id: entry.user_id) %>
         <%# handle any potential bad data where the post is missing a user %>
@@ -11,7 +13,7 @@
           anonymous
         <% end %>
       </h4>
-      
+    
       <% if entry.uploaded_image.attached? %>
         <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
       <% else %>
@@ -19,4 +21,5 @@
       <% end %>
   
 </div>
+</body>
 
